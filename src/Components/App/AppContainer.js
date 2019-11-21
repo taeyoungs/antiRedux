@@ -5,20 +5,24 @@ import Store from 'store';
 class AppContainer extends Component {
   constructor(props) {
     super(props);
-    this._changeMessage = () => {
-      if (this.state.message === 'HELLO') {
-        this.setState({
-          message: 'BYE BYE',
-        });
-      } else {
-        this.setState({
-          message: 'HELLO',
-        });
-      }
-    };
     this.state = {
-      message: 'HELLO',
-      changeMessage: this._changeMessage,
+      notifications: {
+        '1': {
+          id: 1,
+          text: 'First Notification, Practice',
+          seen: false,
+        },
+        '2': {
+          id: 2,
+          text: 'Something else',
+          seen: false,
+        },
+        '3': {
+          id: 3,
+          text: 'Store Provider and Consumer',
+          seen: false,
+        },
+      },
     };
   }
   render() {
